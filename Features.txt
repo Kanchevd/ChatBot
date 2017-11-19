@@ -1,0 +1,10 @@
+- Calculator
+- Emotional Responses
+- Random Facts
+- Greetings
+- Tell closest cinemas
+- Return movie times fom chosen cinema
+- Memory manipulation(delete,view)
+- Coinflip
+- Give details about location
+- Explain my features
