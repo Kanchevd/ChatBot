@@ -1,3 +1,4 @@
+#Harry's code
 import json, requests, datetime
     
 def findID(cine,cinemaArray):
@@ -145,4 +146,4 @@ def cinemaTimes(postcode,cineChoice,dayChoice):
 
 #print(findCinema2("CV23FB"))
 #print(cinemaDay("CV23FB",'2'))
-#print(cinemaTimes("CV24FB",'2',sunday))
+#print(cinemaTimes("CV24FB",'2','thursday'))

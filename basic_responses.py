@@ -1,4 +1,4 @@
-#Daniel's code - 100%
+#Daniel's code
 from understanding_list import  * #all functions in understanding_list are meant to decode the message
 
 def response_nomem(message):
@@ -22,7 +22,10 @@ def response_nomem(message):
 
     elif randFacts(message,' ') != "Oops":
         return randFacts(message,'')
-
+    
+    elif cinemaDetails(message,' ') != "Oops":
+        return cinemaDetails(message,' ')
+        
     elif locInfo(message) != "Oops":
         return locInfo(message)
 
@@ -34,6 +37,12 @@ def response_nomem(message):
 
     elif features(message) != "Oops":
         return features(message)
+
+    elif commonResp(message) != "Oops":
+        return commonResp(message)
+    
+    elif movies(message) != "Oops":
+        return movies(message)
 
     else:
         return "I don't understand, but hello!"
@@ -58,6 +67,9 @@ def response_mem(message,mem,user_id):
     elif randFacts(message,mem) != "Oops":
         return randFacts(message,mem)
 
+    elif cinemaDetails(message,mem) != "Oops":
+        return cinemaDetails(message,mem)
+
     elif greetings(message) != "Oops":
         return greetings(message) + " Again!"
 
@@ -72,6 +84,12 @@ def response_mem(message,mem,user_id):
         
     elif features(message) != "Oops":
         return features(message)
+
+    elif commonResp(message) != "Oops":
+        return commonResp(message)
+    
+    elif movies(message) != "Oops":
+        return movies(message)
 
     else:
         return "I don't understand. Can you reiterate that?"

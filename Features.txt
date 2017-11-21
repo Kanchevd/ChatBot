@@ -8,3 +8,5 @@
 - Coinflip
 - Give details about location
 - Explain my features
+- Information about (movie name)
+- Details on (cinema type)

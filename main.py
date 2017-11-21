@@ -1,4 +1,4 @@
-#Daniel's code - 100%
+#Daniel's code
 import random
 from writeToID import write_to_id 
 from basic_responses import response_nomem,response_mem 

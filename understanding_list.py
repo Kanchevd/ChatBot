@@ -1,10 +1,10 @@
-#Daniel's code - 100%
+#Daniel's code 
 import random
 from geopy.geocoders import *
-from geopy.geocoders import Nominatim
-import geopy
 geolocator = Nominatim()
 from CineList import *
+from movieInfo import movieInfo
+from CinemaDetails import PlacesIdFinder
 
 def emotions(message,mem):
     """Takes message and last line of memory as str, returns emotional-based response if deciphered,""Oops"" otherwise. """
@@ -151,4 +151,59 @@ def features(message):
     else:
         return "Oops"
 
-#print(closest_cinema("0",'Where is the nearest cinema\nCV1 5LD'))
+def commonResp(message):
+    commonRespList = ["cool","great","nice","thanks","thank you"]
+    botResp = ["Always happy to help.","You're very kind!"]
+    if message in commonRespList:
+        return random.choice(botResp)
+    else:
+        return "Oops"
+
+def movies(message):
+
+    if "info about " in message:
+        size = len("info about ")
+        if len(message) == size:
+            return "info about what?"
+        movie = message[size:len(message)+1]
+        return movieInfo(movie)
+
+    if "information about " in message:
+        size = len("information about ")
+        if len(message) == size:
+            return "info about what?"
+        movie = message[size:len(message)+1]
+        return movieInfo(movie)
+
+    if "info on " in message:
+        size = len("info on ")
+        if len(message) == size:
+            return "info about what?"
+        movie = message[size:len(message)+1]
+        return movieInfo(movie)
+
+    if "information on " in message:
+        size = len("information on ")
+        if len(message) == size:
+            return "info about what?"
+        movie = message[size:len(message)+1]
+        return movieInfo(movie)
+
+    return "Oops"
+
+def cinemaDetails(message,mem):
+    try:
+        lastline = mem.splitlines()[-1]
+    except:
+        lastline = ' '
+    size = len("details on ")
+    if "details on " in message:
+        if len(message) == size:
+            return "details on what?"
+        return "Enter your postcode"
+
+    if "details on " in lastline and (cinemaDetails(lastline,' ') != "details on what?"):
+        cinema = lastline[size:len(lastline) + 1] 
+        return PlacesIdFinder(message,cinema)
+
+    return "Oops"
